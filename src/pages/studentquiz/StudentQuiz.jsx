@@ -1,6 +1,6 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
-import QuizInfoBanner from "../../components/quizInfobanner/QuizInfoBanner";
+import QuizInfoBanner from "../../components/quizinfobanner/QuizInfoBanner";
 import QuizTable from "../../components/quiztable/QuizTable";
 import "./StudentQuiz.css";
 
