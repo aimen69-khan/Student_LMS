@@ -1,0 +1,57 @@
+.schedule-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.schedule-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.schedule-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.schedule-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  background: #232323;
+  color: #9a9a9a;
+}
+
+.schedule-day-label {
+  font-size: 11px;
+}
+
+.schedule-day-date {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e4e4e4;
+}
+
+.schedule-day.active {
+  background: #22c55e;
+}
+
+.schedule-day.active .schedule-day-label,
+.schedule-day.active .schedule-day-date {
+  color: #ffffff;
+}

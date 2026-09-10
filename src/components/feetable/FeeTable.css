@@ -1,0 +1,78 @@
+.fee-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fee-table th {
+  text-align: left;
+  color: #9a9a9a;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.fee-table td {
+  color: #e4e4e4;
+  font-size: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #232323;
+  white-space: nowrap;
+}
+
+.fee-table tr:last-child td {
+  border-bottom: none;
+}
+
+.voucher-id {
+  color: #9a9a9a;
+  margin-right: 8px;
+}
+
+.copy-btn {
+  background: #232323;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  color: #9a9a9a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.copy-btn:hover {
+  background: #2a2a2a;
+  color: #e4e4e4;
+}
+
+.fee-status {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.fee-status-paid {
+  color: #22c55e;
+  border-color: #1f5c38;
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.fee-status-unpaid {
+  color: #ef4444;
+  border-color: #5c1f1f;
+  background: rgba(239, 68, 68, 0.08);
+}

@@ -1,0 +1,50 @@
+.activity-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.activity-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: #111111;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 40px;
+}
+
+.activity-tab {
+  border: none;
+  background: transparent;
+  color: #9a9a9a;
+  font-size: 13px;
+  padding: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.activity-tab:hover {
+  color: #e4e4e4;
+}
+
+.activity-tab.active {
+  background: #ffffff;
+  color: #111111;
+  font-weight: 500;
+}
+
+.activity-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.activity-empty p {
+  color: #6b6b6b;
+  font-size: 14px;
+  margin: 0;
+}
