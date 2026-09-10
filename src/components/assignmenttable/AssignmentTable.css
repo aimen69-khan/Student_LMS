@@ -1,0 +1,81 @@
+.assignment-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.assignment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignment-table th {
+  text-align: left;
+  color: #9a9a9a;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.assignment-table td {
+  color: #e4e4e4;
+  font-size: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #232323;
+  white-space: nowrap;
+}
+
+.assignment-table tr:last-child td {
+  border-bottom: none;
+}
+
+.assignment-table tr.row-hackathon {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.assignment-name {
+  margin-right: 10px;
+}
+
+.row-hackathon .assignment-name {
+  color: #c084fc;
+}
+
+.no-topics {
+  color: #6b6b6b;
+  font-size: 13px;
+}
+
+.action-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #232323;
+  border: 1px solid #2a2a2a;
+  color: #9a9a9a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: #2a2a2a;
+  color: #e4e4e4;
+}
+
+.submissions-closed {
+  color: #ef4444;
+  font-size: 12px;
+  font-style: italic;
+}

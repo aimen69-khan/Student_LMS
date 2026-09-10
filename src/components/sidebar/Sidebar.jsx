@@ -20,7 +20,6 @@ const navItems = [
 ];
 
 export default function Sidebar({ userName = "Student" }) {
-  // Only matters on small screens — the sidebar becomes a slide-in drawer there.
   const [isOpen, setIsOpen] = useState(false);
 
   const initials = userName
@@ -34,7 +33,6 @@ export default function Sidebar({ userName = "Student" }) {
 
   return (
     <>
-      {/* Hamburger icon — hidden on desktop, shown on small screens via CSS */}
       <button
         className="sidebar-mobile-toggle"
         onClick={() => setIsOpen(true)}
@@ -43,7 +41,6 @@ export default function Sidebar({ userName = "Student" }) {
         <Menu size={20} />
       </button>
 
-      {/* Dark backdrop behind the open drawer on mobile */}
       {isOpen && (
         <div
           className="sidebar-overlay"

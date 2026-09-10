@@ -1,0 +1,48 @@
+.attendance-overview-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.attendance-overview-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.attendance-overview-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.attendance-overview-msg {
+  color: #9a9a9a;
+  font-size: 13px;
+  margin: 0;
+}
+
+.attendance-overview-percent {
+  color: #22c55e;
+  font-size: 22px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.attendance-progress-track {
+  height: 8px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.attendance-progress-fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 6px;
+}
