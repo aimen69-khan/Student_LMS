@@ -17,7 +17,7 @@ export default function TeacherLogin() {
       setError("Enter your Email and Password to continue.");
       return;
     }
-    if(email === "teacher123@gmail.com" && password === "Teacher1234"){
+    if(email === "teacher123@gmail.com" && password === "teacher123"){
       setError("");
       navigate("/teacher-dashboard");
       return;

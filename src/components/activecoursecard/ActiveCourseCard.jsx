@@ -1,30 +1,30 @@
-import { Hash, MapPin } from "lucide-react";
+import { Hash, MapPin, Users } from "lucide-react";
 import "./ActiveCourseCard.css";
 
+const iconMap = { hash: Hash, pin: MapPin, users: Users };
 export default function ActiveCourseCard({
   title,
   status,
   schedule = [],
   progress = 0,
-  batch,
-  roll,
-  campus,
-  city,
+  meta = [],
 }) {
   return (
     <div className="course-card">
       <div className="course-header">
         <h3 className="course-title">{title}</h3>
-        <span className="course-status">{status}</span>
+        {status && <span className="course-status">{status}</span>}
       </div>
 
-      <div className="course-schedule">
-        {schedule.map((slot) => (
-          <span key={slot} className="course-slot">
-            {slot}
-          </span>
-        ))}
-      </div>
+      {schedule.length > 0 && (
+        <div className="course-schedule">
+          {schedule.map((slot) => (
+            <span key={slot} className="course-slot">
+              {slot}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="course-progress">
         <div className="course-progress-row">
@@ -38,28 +38,20 @@ export default function ActiveCourseCard({
         </div>
       </div>
 
-      <div className="course-meta">
-        <div className="course-meta-item">
-          <Hash size={14} />
-          <span>Batch:</span>
-          <strong>{batch}</strong>
+      {meta.length > 0 && (
+        <div className="course-meta">
+          {meta.map(({ icon, label, value }) => {
+            const Icon = iconMap[icon] || Hash;
+            return (
+              <div className="course-meta-item" key={label}>
+                <Icon size={14} />
+                <span>{label}:</span>
+                <strong>{value}</strong>
+              </div>
+            );
+          })}
         </div>
-        <div className="course-meta-item">
-          <span className="meta-hash">#</span>
-          <span>Roll:</span>
-          <strong>{roll}</strong>
-        </div>
-        <div className="course-meta-item">
-          <MapPin size={14} />
-          <span>Campus:</span>
-          <strong>{campus}</strong>
-        </div>
-        <div className="course-meta-item">
-          <MapPin size={14} />
-          <span>City:</span>
-          <strong>{city}</strong>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
