@@ -19,7 +19,7 @@ export default function TeacherLogin() {
     }
     if(email === "teacher123@gmail.com" && password === "Teacher1234"){
       setError("");
-      navigate("/");
+      navigate("/teacher-dashboard");
       return;
     }
 
