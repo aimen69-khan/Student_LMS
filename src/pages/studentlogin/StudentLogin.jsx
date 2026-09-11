@@ -18,7 +18,7 @@ export default function StudentLogin() {
       setError("Enter your CNIC and password to continue.");
       return;
     }
-    if (cnic === "12345-6789101-1" && password === "123456") {
+    if (cnic === "1234567891011" && password === "123456") {
       setError("");
       navigate("/student-dashboard");
       return;

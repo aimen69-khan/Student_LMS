@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import StudentLogin from './pages/studentlogin/StudentLogin'
 import TeacherLogin from './pages/teacherlogin/TeacherLogin'
 import AdminLogin from './pages/adminlogin/AdminLogin'
@@ -8,7 +8,7 @@ import StudentProgress from './pages/studentprogress/StudentProgress'
 import StudentAssignment from './pages/studentassignment/StudentAssignment'
 import StudentAttendance from './pages/studentattendance/StudentAttendance'
 import StudentQuiz from './pages/studentquiz/StudentQuiz'
-
+import TSidebar from './pages/teacherdashboard/TeacherDashboard'
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
       <Route path='/student-attendance' element={<StudentAttendance />} />
       <Route path='/student-quiz' element={<StudentQuiz />} />
       <Route path='/teacher-login' element={<TeacherLogin />} />
+      <Route path='/teacher-dashboard' element={<TSidebar />} />
       <Route path='/admin-login' element={<AdminLogin />} />
     </Routes>
       

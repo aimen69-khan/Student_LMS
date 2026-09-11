@@ -53,8 +53,8 @@ const quizzes = [
     module: "Front-End Development",
     questions: 40,
     attempts: "1/3",
-    percentage: 57,
-    status: "FAILED",
+    percentage: 75,
+    status: "PASSED",
     action: "Completed",
   },
   {

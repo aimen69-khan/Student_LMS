@@ -8,18 +8,21 @@ import "./AdminLogin.css";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const [cnic, setCnic] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = () => {
-    if (!cnic || !password) {
-      setError("Enter your CNIC and password to continue.");
+    if (!email || !password) {
+      setError("Enter your email and password to continue.");
+      return;
+    }
+    if(email === "admin123@gmail.com" && password === "Admin1234"){
+      setError("");
+      navigate("/");
       return;
     }
     setError("");
-    // TODO: call the admin auth endpoint
-    console.log("Admin login", { cnic, password });
   };
 
   return (
@@ -30,16 +33,15 @@ export default function AdminLogin() {
         <div className="card">
           <h2 className="card-title">Login</h2>
           <p className="card-desc">
-            Kindly provide your CNIC number and password to access the admin
-            portal.
+            Kindly provide your Email and password to access the admin portal.
           </p>
 
           <Input
             label="CNIC"
             required
-            value={cnic}
-            onChange={(e) => setCnic(e.target.value)}
-            placeholder="42101-1234567-1"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="example@gmail.com"
           />
 
           <PasswordInput

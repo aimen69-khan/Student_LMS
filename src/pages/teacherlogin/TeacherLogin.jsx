@@ -8,17 +8,22 @@ import "./TeacherLogin.css";
 
 export default function TeacherLogin() {
   const navigate = useNavigate();
-  const [cnic, setCnic] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = () => {
-    if (!cnic || !password) {
-      setError("Enter your CNIC and password to continue.");
+    if (!email || !password) {
+      setError("Enter your Email and Password to continue.");
       return;
     }
+    if(email === "teacher123@gmail.com" && password === "Teacher1234"){
+      setError("");
+      navigate("/");
+      return;
+    }
+
     setError("");
-    console.log("Teacher login", { cnic, password });
   };
 
   return (
@@ -32,11 +37,11 @@ export default function TeacherLogin() {
           </p>
 
           <Input
-            label="CNIC"
+            label="EMAIL"
             required
-            value={cnic}
-            onChange={(e) => setCnic(e.target.value)}
-            placeholder="42101-1234567-1"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="example@gmail.com"
           />
 
           <PasswordInput
