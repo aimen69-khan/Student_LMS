@@ -11,6 +11,9 @@ import StudentQuiz from './pages/studentquiz/StudentQuiz'
 import TeacherDashboard from './pages/teacherdashboard/TeacherDashboard'
 import TeacherAssignment from './pages/teacherassignment/TeacherAssignment'
 import TeacherQuiz from './pages/teacherquiz/TeacherQuiz'
+import AdminDashboard from './pages/admindashboard/AdminDashboard'
+import Teachers from './pages/teachers/Teachers'
+
 
 function App() {
 
@@ -28,6 +31,8 @@ function App() {
       <Route path='/teacher-assignment' element={<TeacherAssignment />} />
       <Route path='/teacher-quiz' element={<TeacherQuiz />} />
       <Route path='/admin-login' element={<AdminLogin />} />
+      <Route path='/admin-dashboard' element={<AdminDashboard />} />
+      <Route path='/admin-teachers' element={<Teachers />} />
     </Routes>
     </>
   )

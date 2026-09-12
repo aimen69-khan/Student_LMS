@@ -6,12 +6,14 @@ import {
   CalendarCheck,
   ClipboardList,
   HelpCircle,
+  Users,
   ChevronLeft,
   Menu,
 } from "lucide-react";
 import "./Sidebar.css";
 
-const navItems = [
+// Default nav list — used when no navItems prop is passed (student pages).
+export const studentNavItems = [
   { label: "Dashboard", icon: LayoutGrid, path: "/student-dashboard" },
   { label: "Progress", icon: BookOpen, path: "/student-progress" },
   { label: "Attendance", icon: CalendarCheck, path: "/student-attendance" },
@@ -19,7 +21,22 @@ const navItems = [
   { label: "Quiz", icon: HelpCircle, path: "/student-quiz" },
 ];
 
-export default function Sidebar({ userName = "Student" }) {
+export const teacherNavItems = [
+  { label: "Dashboard", icon: LayoutGrid, path: "/teacher-dashboard" },
+  { label: "Assignment", icon: ClipboardList, path: "/teacher-assignment" },
+  { label: "Quiz", icon: HelpCircle, path: "/teacher-quiz" },
+];
+
+export const adminNavItems = [
+  { label: "Dashboard", icon: LayoutGrid, path: "/admin-dashboard" },
+  { label: "Teachers", icon: Users, path: "/admin-teachers" },
+];
+
+export default function Sidebar({
+  userName = "Student",
+  navItems = studentNavItems,
+}) {
+  // Only matters on small screens — the sidebar becomes a slide-in drawer there.
   const [isOpen, setIsOpen] = useState(false);
 
   const initials = userName
@@ -33,6 +50,7 @@ export default function Sidebar({ userName = "Student" }) {
 
   return (
     <>
+      {/* Hamburger icon — hidden on desktop, shown on small screens via CSS */}
       <button
         className="sidebar-mobile-toggle"
         onClick={() => setIsOpen(true)}
@@ -41,6 +59,7 @@ export default function Sidebar({ userName = "Student" }) {
         <Menu size={20} />
       </button>
 
+      {/* Dark backdrop behind the open drawer on mobile */}
       {isOpen && (
         <div
           className="sidebar-overlay"

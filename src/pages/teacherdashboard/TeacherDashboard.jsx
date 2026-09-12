@@ -1,8 +1,8 @@
-import React from 'react'
-import TSidebar from '../../components/tsidebar/TSidebar'
-import Topbar from '../../components/topbar/Topbar'
-import ActiveCourseCard from '../../components/activecoursecard/ActiveCourseCard'
-import './TeacherDashboard.css'
+import Sidebar, { teacherNavItems } from "../../components/sidebar/Sidebar";
+import Topbar from "../../components/topbar/Topbar";
+import ActiveCourseCard from "../../components/activecoursecard/ActiveCourseCard";
+import "./TeacherDashboard.css";
+
 
 const courses = [
   {
@@ -29,16 +29,15 @@ const courses = [
 
 export default function TeacherDashboard() {
   return (
-    <>
-      <div className="dashboard-layout">
-      <TSidebar />
+    <div className="dashboard-layout">
+      <Sidebar userName="Teacher" navItems={teacherNavItems} />
 
       <div className="dashboard-main">
         <Topbar breadcrumb={["Home", "Dashboard"]} />
 
         <div className="page-content">
           <h3 className="section-heading">Training Courses</h3>
- 
+
           {courses.map((course) => (
             <ActiveCourseCard
               key={course.title}
@@ -51,6 +50,5 @@ export default function TeacherDashboard() {
         </div>
       </div>
     </div>
-    </>
-  )
+  );
 }

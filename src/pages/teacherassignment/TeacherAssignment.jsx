@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
-import TSidebar from "../../components/tsidebar/TSidebar";
+import Sidebar, { teacherNavItems } from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
 import TeacherAssignmentItem from "../../components/teacherassignmentitem/TeacherAssignmentItem";
 import AddAssignmentModal from "../../components/addassignmentmodal/AddAssignmentModal";
 import "./TeacherAssignment.css";
+
+const STORAGE_KEY = "smit-teacher-assignments";
 
 
 const initialAssignments = [
@@ -14,21 +16,21 @@ const initialAssignments = [
     dueDate: "August 17, 2026",
     submissions: [
       {
-        id: 778101,
+        id: 101,
         studentName: "Ahmed Raza",
         rollNo: "778115",
         submittedOn: "Aug 15, 2026",
         status: "PENDING",
       },
       {
-        id: 779102,
+        id: 102,
         studentName: "Sara Khan",
         rollNo: "778120",
         submittedOn: "Aug 16, 2026",
         status: "APPROVED",
       },
       {
-        id: 780103,
+        id: 103,
         studentName: "Bilal Ahmed",
         rollNo: "778132",
         submittedOn: "Aug 16, 2026",
@@ -59,9 +61,26 @@ const initialAssignments = [
   },
 ];
 
+function loadAssignments() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : initialAssignments;
+  } catch {
+    return initialAssignments;
+  }
+}
+
 export default function TeacherAssignment() {
-  const [assignments, setAssignments] = useState(initialAssignments);
+  const [assignments, setAssignments] = useState(loadAssignments);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(assignments));
+    } catch {
+      // storage full or disabled — fail silently, keep working in-memory
+    }
+  }, [assignments]);
 
   const handleAdd = (newAssignment) => {
     setAssignments((prev) => [newAssignment, ...prev]);
@@ -84,7 +103,7 @@ export default function TeacherAssignment() {
 
   return (
     <div className="dashboard-layout">
-      <TSidebar />
+      <Sidebar userName="Teacher" navItems={teacherNavItems} />
 
       <div className="dashboard-main">
         <Topbar breadcrumb={["Home", "Assignment"]} />

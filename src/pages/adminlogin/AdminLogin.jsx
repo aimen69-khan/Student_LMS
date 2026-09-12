@@ -17,9 +17,9 @@ export default function AdminLogin() {
       setError("Enter your email and password to continue.");
       return;
     }
-    if(email === "admin123@gmail.com" && password === "Admin1234"){
+    if(email === "admin1234@gmail.com" && password === "admin1234"){
       setError("");
-      navigate("/");
+      navigate("/admin-dashboard");
       return;
     }
     setError("");
