@@ -1,0 +1,68 @@
+.teacher-quiz-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.teacher-quiz-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teacher-quiz-table th {
+  text-align: left;
+  color: #9a9a9a;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.teacher-quiz-table td {
+  color: #e4e4e4;
+  font-size: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #232323;
+  white-space: nowrap;
+}
+
+.teacher-quiz-table tr:last-child td {
+  border-bottom: none;
+}
+
+.teacher-quiz-pill {
+  background: #232323;
+  border: 1px solid #2a2a2a;
+  color: #c4c4c4;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.teacher-quiz-delete {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #232323;
+  border: 1px solid #2a2a2a;
+  color: #9a9a9a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.teacher-quiz-delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.teacher-quiz-empty {
+  text-align: center;
+  color: #6b6b6b;
+  white-space: normal;
+  padding: 32px 20px;
+}

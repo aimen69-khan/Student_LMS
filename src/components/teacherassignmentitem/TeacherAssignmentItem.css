@@ -1,0 +1,134 @@
+.teacher-assignment-item {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.teacher-assignment-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.teacher-assignment-title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.teacher-assignment-sub {
+  color: #9a9a9a;
+  font-size: 13px;
+  margin: 0;
+}
+
+.teacher-assignment-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.submission-count {
+  color: #9a9a9a;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.teacher-assignment-toggle {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a9a9a;
+  transition: transform 0.2s ease;
+}
+
+.teacher-assignment-item.open .teacher-assignment-toggle {
+  transform: rotate(180deg);
+}
+
+.teacher-assignment-body {
+  padding: 0 20px 16px;
+  border-top: 1px solid #232323;
+  overflow-x: auto;
+}
+
+.no-submissions {
+  color: #6b6b6b;
+  font-size: 13px;
+  padding: 16px 0 4px;
+  margin: 0;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.submission-table th {
+  text-align: left;
+  color: #9a9a9a;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.submission-table td {
+  color: #e4e4e4;
+  font-size: 13px;
+  padding: 12px;
+  border-bottom: 1px solid #232323;
+  white-space: nowrap;
+}
+
+.submission-table tr:last-child td {
+  border-bottom: none;
+}
+
+.submission-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.decision-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.decision-btn.approve {
+  color: #22c55e;
+}
+
+.decision-btn.approve:hover {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.decision-btn.reject {
+  color: #ef4444;
+}
+
+.decision-btn.reject:hover {
+  background: rgba(239, 68, 68, 0.15);
+}

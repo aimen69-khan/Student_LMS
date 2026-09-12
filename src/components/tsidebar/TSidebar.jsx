@@ -12,7 +12,6 @@ import "./TSidebar.css";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutGrid, path: "/teacher-dashboard" },
-  { label: "Attendance", icon: CalendarCheck, path: "/teacher-attendance" },
   { label: "Assignment", icon: ClipboardList, path: "/teacher-assignment" },
   { label: "Quiz", icon: HelpCircle, path: "/teacher-quiz" },
 ];
