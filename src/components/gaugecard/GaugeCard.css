@@ -1,0 +1,41 @@
+@keyframes gaugeCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gauge-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  animation: gaugeCardIn 0.4s ease both;
+}
+
+.gauge-card-label {
+  color: #9a9a9a;
+  font-size: 12px;
+  margin: 0 0 4px 0;
+}
+
+.gauge-card-value {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.gauge-card-change {
+  color: #22c55e;
+  font-size: 12px;
+  margin: 4px 0 0 0;
+}

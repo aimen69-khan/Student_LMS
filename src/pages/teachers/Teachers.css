@@ -51,6 +51,45 @@
   transform: scale(0.97);
 }
 
+.stats-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.teachers-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: start;
+}
+
+@keyframes teachersStatIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-row .stat-card {
+  animation: teachersStatIn 0.35s ease both;
+}
+
+.stats-row .stat-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.stats-row .stat-card:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.stats-row .stat-card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
 .trainer-list .course-card:nth-of-type(1) {
   animation-delay: 0s;
 }
@@ -62,4 +101,16 @@
 }
 .trainer-list .course-card:nth-of-type(n + 4) {
   animation-delay: 0.24s;
+}
+
+@media (max-width: 1100px) {
+  .teachers-charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-row {
+    flex-direction: column;
+  }
 }

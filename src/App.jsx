@@ -13,6 +13,7 @@ import TeacherAssignment from './pages/teacherassignment/TeacherAssignment'
 import TeacherQuiz from './pages/teacherquiz/TeacherQuiz'
 import AdminDashboard from './pages/admindashboard/AdminDashboard'
 import Teachers from './pages/teachers/Teachers'
+import AdminStudents from './pages/adminstudent/AdminStudent'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Route path='/admin-login' element={<AdminLogin />} />
       <Route path='/admin-dashboard' element={<AdminDashboard />} />
       <Route path='/admin-teachers' element={<Teachers />} />
+      <Route path='/admin-students' element={<AdminStudents />} />
     </Routes>
     </>
   )

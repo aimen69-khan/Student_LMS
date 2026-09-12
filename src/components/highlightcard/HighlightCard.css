@@ -1,0 +1,76 @@
+@keyframes highlightCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.highlight-card {
+  background: linear-gradient(160deg, #2451b8 0%, #1a1a1a 65%);
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  animation: highlightCardIn 0.4s ease both;
+}
+
+.highlight-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.highlight-greeting {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.highlight-message {
+  color: #d6e0f5;
+  font-size: 12px;
+  margin: 0 0 14px 0;
+}
+
+.highlight-value {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.highlight-value-label {
+  color: #d6e0f5;
+  font-size: 12px;
+  margin: 2px 0 16px 0;
+}
+
+.highlight-cta {
+  margin-top: auto;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.highlight-cta:hover {
+  opacity: 0.9;
+}

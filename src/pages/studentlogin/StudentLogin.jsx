@@ -9,8 +9,8 @@ import "./StudentLogin.css";
 
 export default function StudentLogin() {
   const navigate = useNavigate();
-  const [cnic, setCnic] = useState("");
-  const [password, setPassword] = useState("");
+  const [cnic, setCnic] = useState("1234567891011");
+  const [password, setPassword] = useState("123456");
   const [error, setError] = useState("");
  
   const handleLogin = () => {
@@ -18,6 +18,9 @@ export default function StudentLogin() {
       setError("Enter your CNIC and password to continue.");
       return;
     }
+ 
+    // TODO: replace this with a real call to the student auth endpoint.
+    // Hardcoded for now so you can test the flow end to end.
     if (cnic === "1234567891011" && password === "123456") {
       setError("");
       navigate("/student-dashboard");
@@ -35,6 +38,8 @@ export default function StudentLogin() {
         <div className="card">
           <h2 className="card-title">Login</h2>
           <p className="card-desc">
+            Kindly provide the CNIC number and password used during SMIT
+            course registration.
           </p>
  
           <Input
@@ -42,7 +47,7 @@ export default function StudentLogin() {
             required
             value={cnic}
             onChange={(e) => setCnic(e.target.value)}
-            placeholder="42101-1234567-1"
+            placeholder="1234567891011"
           />
  
           <PasswordInput
