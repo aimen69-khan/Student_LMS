@@ -60,75 +60,66 @@
 }
 
 .teacher-assignment-body {
-  padding: 0 20px 16px;
   border-top: 1px solid #232323;
-  overflow-x: auto;
 }
 
 .no-submissions {
   color: #6b6b6b;
   font-size: 13px;
-  padding: 16px 0 4px;
+  padding: 16px 20px;
   margin: 0;
 }
 
-.submission-table {
+.student-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-row {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-}
-
-.submission-table th {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #202020;
+  cursor: pointer;
   text-align: left;
-  color: #9a9a9a;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 10px 12px;
-  border-bottom: 1px solid #2a2a2a;
-  white-space: nowrap;
+  transition: background-color 0.15s ease;
 }
 
-.submission-table td {
-  color: #e4e4e4;
-  font-size: 13px;
-  padding: 12px;
-  border-bottom: 1px solid #232323;
-  white-space: nowrap;
-}
-
-.submission-table tr:last-child td {
+.student-list .student-row:last-child {
   border-bottom: none;
 }
 
-.submission-actions {
-  display: flex;
-  gap: 8px;
+.student-row:hover {
+  background: #1f1f1f;
 }
 
-.decision-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 1px solid #2a2a2a;
-  background: #232323;
+.student-row-name {
+  color: #e4e4e4;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 2px 0;
+}
+
+.student-row-roll {
+  color: #6b6b6b;
+  font-size: 12px;
+  margin: 0;
+}
+
+.student-row-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
-.decision-btn.approve {
-  color: #22c55e;
-}
-
-.decision-btn.approve:hover {
-  background: rgba(34, 197, 94, 0.15);
-}
-
-.decision-btn.reject {
-  color: #ef4444;
-}
-
-.decision-btn.reject:hover {
-  background: rgba(239, 68, 68, 0.15);
+.student-row-date {
+  color: #9a9a9a;
+  font-size: 13px;
+  white-space: nowrap;
 }

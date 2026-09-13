@@ -1,20 +1,10 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
-import StatCard from "../../components/statcard/StatCard";
+import StatCard from "../../components/Statcard/StatCard";
 import ProgressItem from "../../components/progressitem/ProgressItem";
+import modules from "../../components/studentprogressdata/StudentProgressData";
 import "./StudentProgress.css";
 
-const modules = [
-  { title: "Web Designing", completed: 20, total: 20, percent: 100 },
-  { title: "Front-End Development", completed: 26, total: 31, percent: 84 },
-  {
-    title: "Modern Front-End Development",
-    completed: 10,
-    total: 14,
-    percent: 71,
-  },
-  { title: "Back-End Development", completed: 0, total: 16, percent: 0 },
-];
 
 export default function StudentProgress() {
   return (

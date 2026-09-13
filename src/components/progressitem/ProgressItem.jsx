@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { CheckCircle2, Clock, ChevronDown } from "lucide-react";
+import TopicRow from "../topicrow/TopicRow";
 import "./ProgressItem.css";
 
-export default function ProgressItem({ title, completed, total, percent }) {
+export default function ProgressItem({ title, completed, total, percent, topics = [] }) {
   const [open, setOpen] = useState(false);
   const isDone = total > 0 && completed === total;
 
@@ -41,7 +42,18 @@ export default function ProgressItem({ title, completed, total, percent }) {
 
       {open && (
         <div className="progress-item-details">
-          <p>Detailed topic breakdown coming soon.</p>
+          {topics.length > 0 ? (
+            <>
+              <p className="progress-details-heading">Topics in {title}:</p>
+              {topics.map((topic) => (
+                <TopicRow key={topic.title} {...topic} />
+              ))}
+            </>
+          ) : (
+            <p className="progress-details-empty">
+              Detailed topic breakdown coming soon.
+            </p>
+          )}
         </div>
       )}
     </div>

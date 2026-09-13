@@ -1,17 +1,40 @@
 import { useState } from "react";
-import { ChevronDown, Check, X as XIcon } from "lucide-react";
-import Badge from "../../components/badge/Badge";
+import { ChevronDown } from "lucide-react";
+import Badge from "../badge/Badge";
+import Pagination from "../pagination/Pagination";
+import StudentSubmissionModal from "../studentsubmissionmodal/StudentSubmissionModal";
 import "./TeacherAssignmentItem.css";
 
 const statusVariant = {
   PENDING: "gray",
+  SUBMITTED: "blue",
   APPROVED: "green",
   REJECTED: "red",
 };
 
+const PAGE_SIZE = 10;
+
 export default function TeacherAssignmentItem({ assignment, onDecision }) {
   const [open, setOpen] = useState(false);
+  const [page, setPage] = useState(1);
+  const [selectedSubmission, setSelectedSubmission] = useState(null);
+
   const submissionCount = assignment.submissions.length;
+  const totalPages = Math.max(1, Math.ceil(submissionCount / PAGE_SIZE));
+  const pageStart = (page - 1) * PAGE_SIZE;
+  const visibleSubmissions = assignment.submissions.slice(
+    pageStart,
+    pageStart + PAGE_SIZE
+  );
+
+  const handlePageChange = (nextPage) => {
+    if (nextPage < 1 || nextPage > totalPages) return;
+    setPage(nextPage);
+  };
+
+  const handleDecision = (submissionId, status) => {
+    onDecision(assignment.id, submissionId, status);
+  };
 
   return (
     <div className={`teacher-assignment-item ${open ? "open" : ""}`}>
@@ -27,7 +50,7 @@ export default function TeacherAssignmentItem({ assignment, onDecision }) {
 
         <div className="teacher-assignment-right">
           <span className="submission-count">
-            {submissionCount} Submission{submissionCount !== 1 ? "s" : ""}
+            {submissionCount} Student{submissionCount !== 1 ? "s" : ""}
           </span>
           <span className="teacher-assignment-toggle" aria-hidden="true">
             <ChevronDown size={16} />
@@ -38,57 +61,47 @@ export default function TeacherAssignmentItem({ assignment, onDecision }) {
       {open && (
         <div className="teacher-assignment-body">
           {submissionCount === 0 ? (
-            <p className="no-submissions">No students have submitted yet.</p>
+            <p className="no-submissions">No students in this batch yet.</p>
           ) : (
-            <table className="submission-table">
-              <thead>
-                <tr>
-                  <th>Student</th>
-                  <th>Roll No</th>
-                  <th>Submitted On</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {assignment.submissions.map((sub) => (
-                  <tr key={sub.id}>
-                    <td>{sub.studentName}</td>
-                    <td>{sub.rollNo}</td>
-                    <td>{sub.submittedOn}</td>
-                    <td>
-                      <Badge variant={statusVariant[sub.status]}>
+            <>
+              <div className="student-list">
+                {visibleSubmissions.map((sub) => (
+                  <button
+                    key={sub.id}
+                    className="student-row"
+                    onClick={() => setSelectedSubmission(sub)}
+                  >
+                    <div className="student-row-info">
+                      <p className="student-row-name">{sub.studentName}</p>
+                      <p className="student-row-roll">Roll No: {sub.rollNo}</p>
+                    </div>
+                    <div className="student-row-right">
+                      <span className="student-row-date">{sub.submittedOn}</span>
+                      <Badge variant={statusVariant[sub.status] || "gray"}>
                         {sub.status}
                       </Badge>
-                    </td>
-                    <td>
-                      <div className="submission-actions">
-                        <button
-                          className="decision-btn approve"
-                          onClick={() =>
-                            onDecision(assignment.id, sub.id, "APPROVED")
-                          }
-                          aria-label="Approve"
-                        >
-                          <Check size={14} />
-                        </button>
-                        <button
-                          className="decision-btn reject"
-                          onClick={() =>
-                            onDecision(assignment.id, sub.id, "REJECTED")
-                          }
-                          aria-label="Reject"
-                        >
-                          <XIcon size={14} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
+                    </div>
+                  </button>
                 ))}
-              </tbody>
-            </table>
+              </div>
+
+              <Pagination
+                page={page}
+                pageSize={PAGE_SIZE}
+                totalItems={submissionCount}
+                onPageChange={handlePageChange}
+              />
+            </>
           )}
         </div>
+      )}
+
+      {selectedSubmission && (
+        <StudentSubmissionModal
+          submission={selectedSubmission}
+          onClose={() => setSelectedSubmission(null)}
+          onDecision={handleDecision}
+        />
       )}
     </div>
   );

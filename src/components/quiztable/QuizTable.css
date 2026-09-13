@@ -1,8 +1,28 @@
+@keyframes quizTableIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .quiz-table-card {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 10px;
   overflow: hidden;
+  animation: quizTableIn 0.35s ease both;
+}
+
+.quiz-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.quiz-table tbody tr:hover {
+  background: #202020;
 }
 
 .quiz-table {

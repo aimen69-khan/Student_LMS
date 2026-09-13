@@ -13,3 +13,7 @@
   padding: 0 28px 28px;
   overflow-x: auto;
 }
+
+.page-content .quiz-table-card {
+  animation-delay: 0.08s;
+}

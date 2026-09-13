@@ -1,0 +1,29 @@
+.submission-modal-info {
+  margin-bottom: 20px;
+}
+
+.submission-modal-name {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.submission-modal-meta {
+  color: #9a9a9a;
+  font-size: 13px;
+  margin: 0 0 4px 0;
+}
+
+.submission-modal-status {
+  margin-top: 10px;
+}
+
+.submission-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.submission-modal-btn-wrap {
+  flex: 1;
+}

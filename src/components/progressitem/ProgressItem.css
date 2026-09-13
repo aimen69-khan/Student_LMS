@@ -1,9 +1,26 @@
+@keyframes progressItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .progress-item {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 10px;
   margin-bottom: 12px;
   overflow: hidden;
+  animation: progressItemIn 0.35s ease both;
+  transition: border-color 0.15s ease;
+}
+
+.progress-item-row:hover {
+  background: #1e1e1e;
 }
 
 .progress-item-row {
@@ -101,13 +118,30 @@
   transform: rotate(180deg);
 }
 
-.progress-item-details {
-  padding: 12px 20px 16px 66px;
-  color: #9a9a9a;
-  font-size: 13px;
-  border-top: 1px solid #232323;
+@keyframes progressDetailsIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.progress-item-details p {
+.progress-item-details {
+  padding: 16px 20px 18px;
+  border-top: 1px solid #232323;
+  animation: progressDetailsIn 0.25s ease both;
+}
+
+.progress-details-heading {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.progress-details-empty {
+  color: #9a9a9a;
+  font-size: 13px;
   margin: 0;
 }
