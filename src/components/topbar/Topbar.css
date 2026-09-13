@@ -2,15 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 20px 28px;
 }
 
 .breadcrumb {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   color: #9a9a9a;
   font-size: 14px;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .breadcrumb-item {
@@ -21,6 +25,7 @@
 
 .breadcrumb-sep {
   color: #5a5a5a;
+  flex-shrink: 0;
 }
 
 .breadcrumb-current {
@@ -41,6 +46,8 @@
   font-size: 13px;
   cursor: pointer;
   transition: background-color 0.15s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .feedback-btn:hover {
@@ -50,5 +57,10 @@
 @media (max-width: 768px) {
   .topbar {
     padding-left: 72px;
+    align-items: flex-start;
+  }
+
+  .feedback-btn {
+    margin-top: 2px;
   }
 }
