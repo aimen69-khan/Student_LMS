@@ -1,6 +1,6 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
-import StatCard from "../../components/Statcard/StatCard";
+import StatCard from "../../components/statcard/StatCard";
 import ProgressItem from "../../components/progressitem/ProgressItem";
 import modules from "../../components/studentprogressdata/StudentProgressData";
 import "./StudentProgress.css";
